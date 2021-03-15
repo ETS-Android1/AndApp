@@ -11,7 +11,7 @@ I really want to make this application because it's something I've been thinking
 
 | Must have | Should have | Could have | Won't have |
 | --------- | ----------- | ---------- | ---------- |
-| A search bar that allow the user to search some words in the list of title of song available | A button to add the playlist to our playlists on Youtube/Spotify/Deezer... | A feed where you can see the popular playlist, which one were the last created... Where you can share yours too | A way to add new songs to the "list" of songs available |
+| A search bar that allow the user to search some words in the list of title of song available | A button to add the playlist to your playlists on Youtube/Spotify/Deezer... | A feed where you can see the popular playlist, which one were the last created... Where you can share yours too | A way to add new songs to the "list" of songs available |
 | A screen with results of the research, where you can see all the playlist the app made based on the sentence | A button to share the playlist to friends | 
 
 
