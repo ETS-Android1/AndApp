@@ -26,6 +26,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private FirebaseAuth authen;
     private ProgressDialog loadingCircle;
     Intent intentProfile;
+    private int nbrResend=0;
 
     //Data we want to get out of the design
     private Button btnLog,btnResend;
@@ -56,6 +57,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         //adding a event listener to btnLog
         btnLog.setOnClickListener(this);
+        btnResend.setOnClickListener(this);
 
         //doesn't work!!
         //making the toolbar invisible
@@ -73,6 +75,32 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             //we verify the email and the password correspond to an existing account
             checkExistingAccount(email.getEditText().getText().toString(),password.getEditText().getText().toString());
         }
+        //if the user clicked on the resend email button of this activity
+        if(v.getId() == R.id.log_btn_resend_email){
+            //we initialize the intent to launch the next activity
+            intentProfile = new Intent(this, MainActivity.class);
+            //we verify the email and the password correspond to an existing account
+            checkExistingAccount(email.getEditText().getText().toString(),password.getEditText().getText().toString());
+            //here we resend a verification email to the address mail that user fill in
+            authen.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    //we test if the sending of email verification was successful
+                    if (task.isSuccessful()) {
+                        //we show to the user that he need to verify his email
+                        nbrResend+=1;
+                        Toast.makeText(getApplicationContext(), "check your email for verification", Toast.LENGTH_LONG).show();
+                        //if the user clics two times in a row on the button resend
+                        if(nbrResend>=2){
+                            Toast.makeText(getApplicationContext(), "check your email first", Toast.LENGTH_SHORT).show();
+                        }
+                    } else {
+                        //we show to the user that he need to verify his email
+                        Toast.makeText(getApplicationContext(), "ERROR: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                }
+            });
+        }
 
     }
 
@@ -88,17 +116,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         //if the task is a success
         //(here task = check if the account exist)
         if(task.isSuccessful()){
-           /* //if the current user has verified its email
+           //if the current user has verified its email
             if(authen.getCurrentUser().isEmailVerified()){
                 //the user is logged in its session
                 startActivity(intentProfile);
+                //we make the button to resend an email invisible
+                btnResend.setVisibility(View.INVISIBLE);
+                //we set the number of time the user clicked on the button resend to 0
+                nbrResend = 0;
             }
             else{
                 //else we make the button to resend an email visible
                 btnResend.setVisibility(View.VISIBLE);
                 //and we display a message explaining that we couldn't find an account matching
                 Toast.makeText(this,"Confirm your email address OR send a new verification mail",Toast.LENGTH_LONG).show();
-            }*/
+            }
 
         }
         else{
