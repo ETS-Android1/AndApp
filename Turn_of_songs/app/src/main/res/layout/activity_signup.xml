@@ -18,14 +18,16 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/share_icon" />
+            android:src="@drawable/share_icon"
+            android:layout_marginLeft="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/catch_phrase_app"
+            android:text="Turn \n Of \n Phrase"
             android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:textAlignment="center"/>
 
         <TextView
             android:layout_width="wrap_content"

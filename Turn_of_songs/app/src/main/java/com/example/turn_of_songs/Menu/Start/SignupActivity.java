@@ -37,14 +37,14 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
         //initialization of the firebase authentication
         authen = FirebaseAuth.getInstance();
-        loadingCircle = new ProgressDialog(this);
 
-        //Initialization of the data we want to get from the design
+        //Initialization of the data
         username = findViewById(R.id.signup_username);
         password = findViewById(R.id.signup_password);
         confirmPassword = findViewById(R.id.signup_password_confirm);
         email = findViewById(R.id.signup_email);
         btnLog = findViewById(R.id.signup_btn_log);
+        loadingCircle = new ProgressDialog(this);
 
         //add an event listener to the button "login"
         btnLog.setOnClickListener(this);
@@ -99,7 +99,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         if(v.getId() == R.id.signup_btn_log) {
             //we create an intent to launch the next activity
-            Intent intentProfile = new Intent(SignupActivity.this, MenuActivity.class);
+            Intent intentMenu = new Intent(SignupActivity.this, MenuActivity.class);
             //we launch the method that verify all of the fields
             //if the result of the method is true we start the next activity
             if (validateFields() == true) {
@@ -113,7 +113,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 loadingCircle.show();
                 //we now call the function to create a new account
                 CreateAccount(emailUser,passwordUser);
-                startActivity(intentProfile);
+                startActivity(intentMenu);
             }
             else if(validateFields()==false){
                 //else we launch a message explaining that something failed
@@ -129,22 +129,28 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onComplete(@NonNull Task<AuthResult> task) {
+        //we can hide the loading circle
+        loadingCircle.dismiss();
         if(task.isSuccessful()){
             //here we send a verification email to the address mail that user fill in
             authen.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
-
+                    //we test if the email verification was successful
+                    if(task.isSuccessful()){
+                        //we show to the user that he need to verify his email
+                        Toast.makeText(getApplicationContext(),"check your email for verification",Toast.LENGTH_LONG).show();
+                    }
+                    else{
+                        //we show to the user that he need to verify his email
+                        Toast.makeText(getApplicationContext(),"ERROR: "+task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                    }
                 }
             });
             Toast.makeText(this, "account created",Toast.LENGTH_SHORT).show();
-            //we can now hide the loading circle
-            loadingCircle.dismiss();
         }
         else{
             String errorMessage = task.getException().toString();
-            //we can hide the loading circle
-            loadingCircle.dismiss();
             //and now show the error message
             Toast.makeText(this,"ERROR: "+errorMessage,Toast.LENGTH_SHORT).show();
 

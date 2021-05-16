@@ -4,5 +4,5 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="menu_login">log in</string>
     <string name="menu_signUp">Create your account</string>
-    <string name="catch_phrase_app">Turn of phrase</string>
+
 </resources>
