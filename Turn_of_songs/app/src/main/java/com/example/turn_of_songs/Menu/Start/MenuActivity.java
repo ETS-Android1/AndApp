@@ -16,9 +16,10 @@ import com.example.turn_of_songs.R;
 
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button btnSign;
-    Button btnLog;
-    Pair[] nbrAnimation = new Pair[1];
+    private Button btnSign;
+    private Button btnLog;
+    private Pair[] nbrAnimation;
+    private int counter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,15 +28,30 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_menu);
 
+        //initialization of the data
         btnSign = findViewById(R.id.btnSign);
         btnLog = findViewById(R.id.btnLogin);
+        nbrAnimation = new Pair[1];
+        counter = 0;
 
+        //adding an event listener to buttons
         btnLog.setOnClickListener(this);
         btnSign.setOnClickListener(this);
 
-
     }
 
+    @Override
+    public void onBackPressed() {
+        counter++;
+        if(counter==2){
+            counter=0;
+            this.finishAffinity();
+        }
+        else{
+            Toast.makeText(this, "Clic twice to exit", Toast.LENGTH_SHORT).show();
+        }
+
+    }
     @Override
     public void onClick(View v) {
         switch(v.getId()){
@@ -54,7 +70,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 else{
                     startActivity(intentLog);
                 }
-                break;
+            break;
              //if the user click on the button with the id of the sign in button
             case R.id.btnSign:
                 Intent intentSign = new Intent(MenuActivity.this,SignupActivity.class);
@@ -70,7 +86,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 else{
                     startActivity(intentSign);
                 }
-                break;
+            break;
 
         }
     }

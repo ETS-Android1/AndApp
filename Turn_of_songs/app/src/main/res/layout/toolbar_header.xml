@@ -14,7 +14,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Turn of Songs"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        android:fontFamily="@font/alegreya_sc_bold_italic"/>
 
 
 </LinearLayout>

@@ -10,12 +10,13 @@
     tools:openDrawer="start">
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigation_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/navigation_view"
+        app:itemTextAppearance="@style/ItemFont"
+        android:layout_gravity="start"
         app:headerLayout="@layout/toolbar_header"
-        app:menu="@menu/profil_menu"
-        android:layout_gravity="start"/>
+        app:menu="@menu/profil_menu"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,12 +31,13 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:titleTextAppearance="@style/ItemFont"
                 android:background="#63040303"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
