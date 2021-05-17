@@ -4,5 +4,12 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="menu_login">log in</string>
     <string name="menu_signUp">Create your account</string>
+    <string name="forgot_password_title">Forgot Password?</string>
+    <string name="forgot_password_explain_text">Fill in the box with the email address of your account</string>
+    <string name="forgot_password_field">Enter your userMail</string>
+    <string name="forgot_password_verify">verify my account</string>
+    <string name="change_password_title">Change your password</string>
+    <string name="change_password">Change Password</string>
+    <string name="change_password_explain">Here you can reset your password to the one you want! Try not to forget it this time ;)</string>
 
 </resources>

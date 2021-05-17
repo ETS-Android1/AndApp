@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private int nbrResend=0;
 
     //Data we want to get out of the design
-    private Button btnLog,btnResend;
+    private Button btnLog,btnResend,btnForgot;
     private Toolbar toolbar;
     private TextInputLayout password, email;
 
@@ -50,14 +50,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         password = findViewById(R.id.menu_login_password);
         email = findViewById(R.id.menu_login_usermail);
         loadingCircle = new ProgressDialog(this);
-        btnResend=findViewById(R.id.log_btn_resend_email);
+        btnResend = findViewById(R.id.log_btn_resend_email);
+        btnForgot = findViewById(R.id.log_btn_forgot_password);
 
         //we want to hide the button to resend an email for user not to spam
         btnResend.setVisibility(View.INVISIBLE);
 
-        //adding a event listener to btnLog
+        //adding an event listener to button
         btnLog.setOnClickListener(this);
         btnResend.setOnClickListener(this);
+        btnForgot.setOnClickListener(this);
 
         //doesn't work!!
         //making the toolbar invisible
@@ -68,14 +70,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     //if we click on a view this function is called
     @Override
     public void onClick(View v) {
-        //if the user clicked on the login button of this activity
+
+        //if the user clicks on the login button of this activity
         if(v.getId() == R.id.log_btn_login) {
             //we initialize the intent to launch the next activity
             intentProfile = new Intent(this, MainActivity.class);
             //we verify the email and the password correspond to an existing account
             checkExistingAccount(email.getEditText().getText().toString(),password.getEditText().getText().toString());
         }
-        //if the user clicked on the resend email button of this activity
+
+        //if the user clicks on the resend email button of this activity
         if(v.getId() == R.id.log_btn_resend_email){
             //we initialize the intent to launch the next activity
             intentProfile = new Intent(this, MainActivity.class);
@@ -90,7 +94,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         //we show to the user that he need to verify his email
                         nbrResend+=1;
                         Toast.makeText(getApplicationContext(), "check your email for verification", Toast.LENGTH_LONG).show();
-                        //if the user clics two times in a row on the button resend
+                        //if the user clicks two times in a row on the button resend
                         if(nbrResend>=2){
                             Toast.makeText(getApplicationContext(), "check your email first", Toast.LENGTH_SHORT).show();
                         }
@@ -100,6 +104,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
                 }
             });
+        }
+
+        //if the user clicks on the button forget password
+        if(v.getId() == R.id.log_btn_forgot_password){
+            Intent intentForgotPassword = new Intent(this,ForgotPasswordActivity.class);
+            startActivity(intentForgotPassword);
         }
 
     }
@@ -131,7 +141,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 //and we display a message explaining that we couldn't find an account matching
                 Toast.makeText(this,"Confirm your email address OR send a new verification mail",Toast.LENGTH_LONG).show();
             }
-
         }
         else{
             //else we display a message explaining that we couldn't find an account matching

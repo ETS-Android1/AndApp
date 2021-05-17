@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Turn_of_songs">
-        <activity android:name=".Menu.Start.SignupActivity"></activity>
+        <activity android:name=".Menu.Start.ChangePasswordActivity"></activity>
+        <activity android:name=".Menu.Start.ForgotPasswordActivity" />
+        <activity android:name=".Menu.Start.SignupActivity" />
         <activity android:name=".Menu.Start.LoginActivity" />
         <activity android:name=".Menu.Start.MenuActivity">
             <intent-filter>
@@ -20,7 +22,7 @@
         </activity>
         <activity android:name=".Menu.Profile.ThirdActivity" />
         <activity android:name=".Menu.Profile.SecondActivity" />
-        <activity android:name=".Menu.Profile.MainActivity"/>
+        <activity android:name=".Menu.Profile.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
