@@ -5,28 +5,28 @@
         <item
             android:id="@+id/navigation_toolbar_search"
             android:icon="@drawable/search_icon"
-            android:title="Search"/>
+            android:title="@string/profil_menu_search"/>
     </group>
 
 
     <item
         android:id="@+id/navigation_toolBar_profil"
-        android:title="Profil">
+        android:title="@string/profil_menu_profil_title">
 
         <menu>
             <group android:checkableBehavior="single">
                 <item
                     android:id="@+id/navigation_toolbar_my_playlist"
                     android:icon="@drawable/my_playlist_icon"
-                    android:title="My Playlist" />
-                <item
-                    android:id="@+id/navigation_toolbar_logout"
-                    android:icon="@drawable/logout_icon"
-                    android:title="Log Out" />
+                    android:title="@string/profil_menu_playlists_title" />
                 <item
                     android:id="@+id/navigation_toolbar_profil"
                     android:icon="@drawable/profil_icon"
-                    android:title="Profil" />
+                    android:title="@string/profil_menu_profil_title" />
+                <item
+                    android:id="@+id/navigation_toolbar_logout"
+                    android:icon="@drawable/logout_icon"
+                    android:title="@string/profil_menu_logOut" />
             </group>
         </menu>
     </item>
@@ -34,12 +34,12 @@
 
     <item
         android:id="@+id/navigation_toolBar_communicate"
-        android:title="Communicate">
+        android:title="@string/profil_menu_communicate">
         <menu>
             <item
                 android:id="@+id/navigation_toolbar_share"
                 android:icon="@drawable/share_icon"
-                android:title="Share" />
+                android:title="@string/profil_menu_share" />
         </menu>
     </item>
 </menu>

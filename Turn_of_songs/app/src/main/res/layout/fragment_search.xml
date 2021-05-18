@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    tools:context=".Menu.Profile.SearchFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/search_fragment_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:fontFamily="@font/alegreya_sc_bold"
+            android:paddingTop="70dp"
+            android:text="@string/profil_menu_search"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </LinearLayout>
+
+        <SearchView
+            android:id="@+id/search_fragment_searchView"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_margin="50dp"
+            android:background="@drawable/custom_background_searchview"
+            android:gravity="center"
+            android:paddingTop="20dp" />
+
+
+    </LinearLayout>
+
+
+</FrameLayout>

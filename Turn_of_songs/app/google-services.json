@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:461998266293:android:237430b1e1e91ee3b2ebfc",
+        "mobilesdk_app_id": "1:461998266293:android:cb59b336642980d7b2ebfc",
         "android_client_info": {
-          "package_name": "com.example.turn_of_songs"
+          "package_name": "com.example.turnOfSongs"
         }
       },
       "oauth_client": [
