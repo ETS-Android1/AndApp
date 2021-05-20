@@ -8,10 +8,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.Toast;
 
@@ -19,6 +21,10 @@ import com.example.turnOfSongs.Menu.Start.MenuActivity;
 import com.example.turnOfSongs.R;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.spotify.android.appremote.api.ConnectionParams;
+import com.spotify.android.appremote.api.Connector;
+import com.spotify.android.appremote.api.SpotifyAppRemote;
+import com.spotify.protocol.types.Track;
 
 import static androidx.fragment.app.FragmentTransaction.TRANSIT_FRAGMENT_FADE;
 
@@ -30,8 +36,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     androidx.appcompat.widget.Toolbar tBar;
 
     //Data
-    private FirebaseAuth authen;
-    private String lastFragmentTag;
+    public FirebaseAuth authen;
+    public String lastFragmentTag;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         nView = findViewById(R.id.navigation_view);
         tBar = findViewById(R.id.toolbar);
         authen = FirebaseAuth.getInstance();
+
 
         //bring to the front the navigation view
         nView.bringToFront();
@@ -60,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
-        //if on beck press key is clicked
+        //if on back press key is clicked
         //and the navigation bar is open
         if(dLayout.isDrawerOpen(GravityCompat.START)){
             //we closed the navigation bar
@@ -87,9 +95,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 LaunchFragment(profileFragment,"ProfileFragment");
                 break;
             case R.id.navigation_toolbar_search:
-                SearchFragment searchFragment = new SearchFragment();
-                //launch the fragment corresponding to search with a tag in case we want to see its visibility
-                LaunchFragment(searchFragment,"SearchFragment");
+                Intent intentSearch = new Intent(this, SearchActivity.class);
+                //launch the acitvity corresponding to search
+                startActivity(intentSearch);
                 break;
             case R.id.navigation_toolbar_share:
                 Toast.makeText(this,"Share",Toast.LENGTH_SHORT).show();
@@ -127,4 +135,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Intent intentMenu = new Intent(this, MenuActivity.class);
         startActivity(intentMenu);
     }
+
+
 }

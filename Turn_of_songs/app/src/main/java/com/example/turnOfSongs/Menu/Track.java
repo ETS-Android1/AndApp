@@ -1,7 +1,7 @@
-package com.example.turnOfSongs;
+package com.example.turnOfSongs.Menu;
 
 public class Track {
-    //de quoi est composé une chanson
+    
     private String id;
     private String track_name;
     private String[] artists_names;
@@ -14,5 +14,25 @@ public class Track {
         this.artists_names = artists_names;
         this.duration_ms = duration_ms;
         this.url = url;
+    }
+
+    public String getTrackId(){
+        return this.id;
+    }
+
+    public String getTrackName(){
+        return this.track_name;
+    }
+
+    public String[] getTrackArtistNames(){
+        return this.artists_names;
+    }
+
+    public int getTrackDuration_ms(){
+        return this.duration_ms;
+    }
+
+    public String getTrackUrl(){
+        return this.url;
     }
 }

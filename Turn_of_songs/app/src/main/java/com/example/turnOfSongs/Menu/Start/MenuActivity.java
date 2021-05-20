@@ -29,9 +29,6 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
     //Data
     private Pair[] nbrAnimation;
     private int counter;
-    private static final String CLIENT_ID = "93f5b48731cc487b871e27d6be2f7d5f";
-    private static final String REDIRECT_URI = "com.example.turnOfSongs://callback";
-    private SpotifyAppRemote mSpotifyAppRemote;
 
 
 
@@ -109,53 +106,4 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        ConnectionParams connectionParams =
-                new ConnectionParams.Builder(CLIENT_ID)
-                        .setRedirectUri(REDIRECT_URI)
-                        .showAuthView(true)
-                        .build();
-
-        SpotifyAppRemote.connect(this, connectionParams,
-                new Connector.ConnectionListener() {
-
-                    public void onConnected(SpotifyAppRemote spotifyAppRemote) {
-                        mSpotifyAppRemote = spotifyAppRemote;
-                        // Now you can start interacting with App Remote
-                        connected();
-
-                    }
-
-                    public void onFailure(Throwable throwable) {
-                        Toast.makeText(MenuActivity.this,"Spotify connection:"+throwable.getMessage(), Toast.LENGTH_LONG).show();
-
-                        // Something went wrong when attempting to connect! Handle errors here
-                    }
-                });
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        SpotifyAppRemote.disconnect(mSpotifyAppRemote);
-    }
-
-    private void connected() {
-        // Play a playlist
-        //mSpotifyAppRemote.getPlayerApi().play("spotify:playlist:37i9dQZF1DX2sUQwD7tbmL");
-        Toast.makeText(MenuActivity.this, "connected to spotify", Toast.LENGTH_SHORT).show();
-
-        // Subscribe to PlayerState
-        mSpotifyAppRemote.getPlayerApi()
-                .subscribeToPlayerState()
-                .setEventCallback(playerState -> {
-                    final Track track = playerState.track;
-                    if (track != null) {
-                        Toast.makeText(MenuActivity.this, track.name + " by " + track.artist.name, Toast.LENGTH_SHORT).show();
-                    }
-                });
-    }
 }

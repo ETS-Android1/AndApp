@@ -21,18 +21,19 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Turn_of_songs">
-        <activity android:name="com.example.turnOfSongs.Menu.Start.ChangePasswordActivity" />
-        <activity android:name="com.example.turnOfSongs.Menu.Start.ForgotPasswordActivity" />
-        <activity android:name="com.example.turnOfSongs.Menu.Start.SignupActivity" />
-        <activity android:name="com.example.turnOfSongs.Menu.Start.LoginActivity" />
-        <activity android:name="com.example.turnOfSongs.Menu.Start.MenuActivity">
+        <activity android:name=".Menu.Profile.SearchActivity"></activity>
+        <activity android:name=".Menu.Start.ChangePasswordActivity" />
+        <activity android:name=".Menu.Start.ForgotPasswordActivity" />
+        <activity android:name=".Menu.Start.SignupActivity" />
+        <activity android:name=".Menu.Start.LoginActivity" />
+        <activity android:name=".Menu.Start.MenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.turnOfSongs.Menu.Profile.MainActivity" />
+        <activity android:name=".Menu.Profile.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
@@ -105,15 +106,20 @@
 
         <provider
             android:name="com.google.firebase.provider.FirebaseInitProvider"
-            tools:replace="android:authorities"
             android:authorities="com.example.turnOfSongs.firebaseinitprovider"
             android:directBootAware="true"
             android:exported="false"
-            android:initOrder="100" />
+            android:initOrder="100"
+            tools:replace="android:authorities" />
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.spotify.sdk.android.authentication.LoginActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
     </application>
 
 </manifest>

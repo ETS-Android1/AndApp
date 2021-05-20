@@ -1,5 +1,6 @@
-package com.example.turnOfSongs;
+package com.example.turnOfSongs.Menu;
 
+import com.example.turnOfSongs.Menu.Track;
 import com.google.gson.annotations.SerializedName;
 
 public class TrackResponse {
