@@ -37,6 +37,6 @@ https://square.github.io/retrofit/
 And courses of course.
 
 ## Final app
-It's not really what I intended...
+It's not really what I intended, I had so much to do but well I can explain you that during the interview.
 
 
