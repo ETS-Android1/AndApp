@@ -14,5 +14,31 @@ I really want to make this application because it's something I've been thinking
 | A search bar that allow the user to search some words in the list of title of song available | A button to add the playlist to your playlists on Youtube/Spotify/Deezer... | A feed where you can see the popular playlist, which one were the last created... Where you can share yours too | A way to add new songs to the "list" of songs available |
 | A screen with results of the research, where you can see all the playlist the app made based on the sentence | A button to share the playlist to friends | 
 
+    
+## References
+
+To launch the application you must have spotify installed on your smartphone and an account.
+
+https://www.youtube.com/watch?v=sBCE_hOFnQU
+
+
+https://developer.spotify.com/documentation/android/quick-start/
+
+
+https://developer.spotify.com/console/get-search-item/?q=tania+bowra&type=artist
+
+
+https://developer.spotify.com/documentation/web-api/reference/#category-search
+
+
+https://www.youtube.com/channel/UCnKhcV7frITmrYbIU5MrMZw
+
+
+https://square.github.io/retrofit/
+
+And courses of course.
+
+## Final app
+It's not really what I intended, I had so much to do but well I can explain you that during the interview.
 
 
