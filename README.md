@@ -18,10 +18,20 @@ I really want to make this application because it's something I've been thinking
 ## References
 
 https://www.youtube.com/watch?v=sBCE_hOFnQU
+
+
 https://developer.spotify.com/documentation/android/quick-start/
+
+
 https://developer.spotify.com/console/get-search-item/?q=tania+bowra&type=artist
+
+
 https://developer.spotify.com/documentation/web-api/reference/#category-search
+
+
 https://www.youtube.com/channel/UCnKhcV7frITmrYbIU5MrMZw
+
+
 https://square.github.io/retrofit/
 
 And courses of course.
