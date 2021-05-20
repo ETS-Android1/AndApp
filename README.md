@@ -1,4 +1,4 @@
-# Android application: NameOfTheApplication (didn't find one at the moment)
+# Android application: Turn of Songs
 ## Description:
 What I want to do for the android project is an application that could make playlist out of a sentence. The sentence will be written by the user in a place dedicated to it. Then it will search in an API of music a list of musics that correspond to the sentence.
     
