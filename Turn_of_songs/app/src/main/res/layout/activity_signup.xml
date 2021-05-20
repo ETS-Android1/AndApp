@@ -24,7 +24,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Turn \n Of \n Phrase"
+            android:text="Turn \n Of \n Songs"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:fontFamily="@font/alegreya_sc_italic"
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/alegreya_sc_black_italic"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="35dp"
             android:text="@string/menu_signUp"
             android:textAlignment="center"
             android:textColor="@color/black"
@@ -43,13 +43,13 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_height="376dp"
+            android:layout_marginTop="35dp"
             android:orientation="vertical">
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:id="@+id/signup_username"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter username"
@@ -59,26 +59,27 @@
                 app:endIconTint="@color/black"
                 app:hintTextColor="@color/black"
                 app:startIconDrawable="@drawable/profil_icon"
-                app:startIconTint="@color/black"
-                android:layout_marginTop="10dp">
+                app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:digits="0,1,2,3,4,5,6,7,8,9,*,_,-,&amp;,$,qwertzuiopasdfghjklyxcvbnm"
+                    android:fontFamily="@font/alegreya_sc_italic"
                     android:inputType="text"
                     android:maxLength="15"
                     android:maxLines="1"
                     android:singleLine="true"
-                    android:digits="0,1,2,3,4,5,6,7,8,9,*,_,-,&amp;,$,qwertzuiopasdfghjklyxcvbnm"
                     android:textColor="@color/black" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:id="@+id/signup_email"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:hint="Enter email"
                 app:boxStrokeColor="@color/black"
                 app:boxStrokeWidthFocused="2dp"
@@ -86,22 +87,23 @@
                 app:endIconTint="@color/black"
                 app:hintTextColor="@color/black"
                 app:startIconDrawable="@drawable/mail_icon"
-                app:startIconTint="@color/black"
-                android:layout_marginTop="10dp">
+                app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/alegreya_sc_italic"
                     android:inputType="textEmailAddress"
                     android:textColor="@color/black" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:id="@+id/signup_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:hint="Enter password"
                 app:boxStrokeColor="@color/black"
                 app:boxStrokeWidthFocused="2dp"
@@ -109,22 +111,23 @@
                 app:endIconTint="@color/black"
                 app:hintTextColor="@color/black"
                 app:startIconDrawable="@drawable/password_icon"
-                app:startIconTint="@color/black"
-                android:layout_marginTop="10dp">
+                app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/alegreya_sc_italic"
                     android:inputType="textPassword"
                     android:textColor="@color/black" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:id="@+id/signup_password_confirm"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:hint="Confirm password"
                 app:boxStrokeColor="@color/black"
                 app:boxStrokeWidthFocused="2dp"
@@ -132,12 +135,12 @@
                 app:endIconTint="@color/black"
                 app:hintTextColor="@color/black"
                 app:startIconDrawable="@drawable/password_icon"
-                app:startIconTint="@color/black"
-                android:layout_marginTop="10dp">
+                app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/alegreya_sc_italic"
                     android:inputType="textPassword"
                     android:textColor="@color/black" />
 
@@ -145,14 +148,15 @@
 
 
             <Button
+                android:id="@+id/signup_btn_log"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/signup_btn_log"
-                android:text="@string/menu_login"
-                android:backgroundTint="#FD74CDB2"
-                android:textColor="@color/white"
+                android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:layout_gravity="center"/>
+                android:backgroundTint="#FD74CDB2"
+                android:fontFamily="@font/alegreya_sc_bold"
+                android:text="@string/menu_login"
+                android:textColor="@color/white" />
 
 
         </LinearLayout>

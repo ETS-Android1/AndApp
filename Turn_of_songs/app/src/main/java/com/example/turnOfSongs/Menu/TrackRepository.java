@@ -41,13 +41,16 @@ public class TrackRepository {
 
         Log.i("TrackRepository","TR.searchForTrack : " + trackName +" auth : " + auth);
 
-        SpotifyTrackApi spotifyTrackApi = ServiceGenerator.getSpotifyTrackApi();
-        Call<TrackResponse> call = spotifyTrackApi.getTrack(": Bearer "+ auth,trackName,"track");
+        SpotifyTrackApi spotifyTrackApi = ServiceGenerator.getSpotifyTrackApi(auth);
+        Call<TrackResponse> call = spotifyTrackApi.getTrack(trackName,"track");
+
 
         call.enqueue(new Callback<TrackResponse>() {
             @EverythingIsNonNull
             @Override
             public void onResponse(Call<TrackResponse> call, Response<TrackResponse> response) {
+                Log.i("TrackRepository","Request Header : " + call.request().headers().toString());
+
                 if (response.isSuccessful()) {
                     Log.i("TrackRepository","TrackRepository.onResponse : Successful");
                     searchedTrack.setValue(response.body().getTrack());
@@ -63,6 +66,7 @@ public class TrackRepository {
                 else {
                     Log.i("TrackRepository","TrackRepository.onResponse : Not successful : ResponseCode : " + response.code());
                 }
+                //Log.i("TrackRepository",response.headers().toString());
 
             }
             @EverythingIsNonNull

@@ -10,6 +10,6 @@ import retrofit2.http.Query;
 public interface SpotifyTrackApi {
 
     @GET("api.spotify.com/v1/search")
-    Call<TrackResponse> getTrack(@Header("Authorization") String authorization, @Query("name") String title, @Query("type") String type);
+    Call<TrackResponse> getTrack(@Query("name") String title, @Query("type") String type);
 
 }

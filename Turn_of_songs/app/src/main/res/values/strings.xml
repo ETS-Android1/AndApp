@@ -12,7 +12,7 @@
     <string name="change_password">Change Password</string>
     <string name="change_password_explain">Here you can reset your password to the one you want! Try not to forget it this time ;)</string>
     <string name="profil_menu_playlists_title">My Playlists</string>
-    <string name="profil_menu_profil_title">Profil</string>
+    <string name="profil_menu_profil_title">Your Profil</string>
     <string name="profil_menu_logOut">Log Out</string>
     <string name="profil_menu_share">Share</string>
     <string name="profil_menu_search">Search</string>

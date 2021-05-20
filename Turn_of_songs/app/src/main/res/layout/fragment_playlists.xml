@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/search_fragment_title"
-        android:paddingTop="70dp"
+        android:paddingTop="180dp"
         android:text="@string/profil_menu_playlists_title"
         android:textColor="@color/black"
         android:textAlignment="center"
