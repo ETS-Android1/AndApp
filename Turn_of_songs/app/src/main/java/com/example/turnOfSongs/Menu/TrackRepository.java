@@ -49,8 +49,6 @@ public class TrackRepository {
             @EverythingIsNonNull
             @Override
             public void onResponse(Call<TrackResponse> call, Response<TrackResponse> response) {
-                Log.i("TrackRepository","Request Header : " + call.request().headers().toString());
-
                 if (response.isSuccessful()) {
                     Log.i("TrackRepository","TrackRepository.onResponse : Successful");
                     searchedTrack.setValue(response.body().getTrack());
@@ -67,6 +65,7 @@ public class TrackRepository {
                     Log.i("TrackRepository","TrackRepository.onResponse : Not successful : ResponseCode : " + response.code());
                 }
                 //Log.i("TrackRepository",response.headers().toString());
+                Log.i("TrackRepository","Request Header : " + call.request().headers().toString());
 
             }
             @EverythingIsNonNull

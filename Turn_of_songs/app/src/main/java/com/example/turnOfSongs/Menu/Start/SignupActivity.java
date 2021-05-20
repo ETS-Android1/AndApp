@@ -11,6 +11,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.turnOfSongs.Menu.SessionManager;
 import com.example.turnOfSongs.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -111,6 +112,13 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                 loadingCircle.show();
                 //we now call the function to create a new account
                 CreateAccount(emailUser,passwordUser);
+
+                String _username = username.getEditText().getText().toString().trim();
+                String _email = email.getEditText().getText().toString().trim();
+                String _password = password.getEditText().getText().toString();
+
+                SessionManager sessionManager = new SessionManager(this,SessionManager.SESSION_USERSESSION);
+                sessionManager.createLoginSession(_username,_email,_password);
                 startActivity(intentMenu);
             }
             else if(validateFields()==false){

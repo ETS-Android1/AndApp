@@ -39,7 +39,6 @@
             android:layout_marginLeft="125dp"
             android:layout_marginTop="15dp"
             android:fontFamily="@font/alegreya_sc_bold"
-            android:text="User Name"
             android:textColor="@color/black"
             android:textSize="30sp" />
 

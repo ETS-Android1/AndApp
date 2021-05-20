@@ -1,5 +1,7 @@
 package com.example.turnOfSongs.Menu;
 
+import android.util.Log;
+
 import java.io.IOException;
 
 import okhttp3.Interceptor;
@@ -16,10 +18,10 @@ public class ServiceGenerator {
         if (trackApi == null) {
             OkHttpClient.Builder okhttpbuilder = new OkHttpClient.Builder();
 
-            okhttpbuilder.addInterceptor(chain -> {
+            okhttpbuilder.addInterceptor( chain -> {
                 Request request = chain.request();
                 Request.Builder newRequest = request.newBuilder().header("Authorization","Bearer " + auth);
-
+                Log.i("ServiceGenerator","Interceptor, auth : " + auth);
                 return chain.proceed(newRequest.build());
             });
 
