@@ -17,6 +17,8 @@ I really want to make this application because it's something I've been thinking
     
 ## References
 
+To launch the application you must have spotify installed on your smartphone and an account.
+
 https://www.youtube.com/watch?v=sBCE_hOFnQU
 
 
